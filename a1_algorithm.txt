@@ -1,0 +1,16 @@
+Algorithm for Assignment 1 
+
+(1) The script accept minimum of 2 data items. First being a date in the YYYY/MM/DD format,
+    second item is an number and an optional third item being --step
+
+(2) The number of arguments should be check and give a usage instruction if it is less
+    than 2 or more than 3. Arguments are also checked to see if they're entered in the 
+    correct format: YYYY/MM/DD for the first, an interger for the second
+
+(3) Take the first argument and seperate them by the / to get the year, month and date
+
+(4) There are two scripts that will give the day before or after of the date given.
+    Leap year will be taken into consideration to give the correct date.
+    
+(5) Depend on whether or not the number argument is positive or negative, the program will call
+    the before or after script the correct number of time.
