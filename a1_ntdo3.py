@@ -14,6 +14,15 @@ import sys
 
 #Checking the number of arguments pass on to the script
 def usage(number):
+    '''
+    usage(number) -> str
+    usage() checks the number of arguments to make sure that it is
+    between 2 and 3. If false, return usage instruction 
+    e.g. usage('2017/12/31', '5') -> True
+         usage('2017/12/31', '5', '--step') -> True
+         usage('2017/12/31') -> 'Usage: a1_rchan.py [--step] YYYY/MM/DD +/-n'
+         usage('2017/12/31', '5', '--step', 'sdoif', '234') -> 'Usage: a1_rchan.py [--step] YYYY/MM/DD +/-n'
+'''
     number = len(sys.argv)
     if number <= 2:
         print('Usage: a1_rchan.py [--step] YYYY/MM/DD +/-n')
@@ -188,11 +197,29 @@ def dbda(date,days):
 		return tmp_date
 		
 if __name__ == "__main__":
-	number = len(sys.argv)
-	if usage(number):
-	    today = sys.argv[1]
-	    days = sys.argv[2]
-	    if valid_date(today) == "Valid date":
-	        print(dbda(today,days))
-	    else:
-	        print(valid_date(today))
+    cmd_arg = sys.argv[:]
+    number = len(cmd_arg)
+    if number == 4:
+      if "--step" in sys.argv[:]:
+        cmd_arg.remove("--step")
+        count = 0
+        today = cmd_arg[1]
+        days = int(cmd_arg[2])
+        if days > 0:
+          while count < days:
+            print(after(today))
+            today = after(today)
+            count = count + 1
+        else:
+          while count > days:
+            print(before(today))
+            today = before(today)
+            count = count - 1
+    else:
+      if usage(number):
+        today = sys.argv[1]
+        days = sys.argv[2]
+        if valid_date(today) == "Valid date":
+          print(dbda(today,days))
+        else:
+          print(valid_date(today))
