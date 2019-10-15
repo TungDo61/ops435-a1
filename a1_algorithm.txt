@@ -1,16 +1,26 @@
 Algorithm for Assignment 1 
 
-(1) The script accept minimum of 2 data items. First being a date in the YYYY/MM/DD format,
-    second item is an number and an optional third item being --step
+(1) The script accept minimum of 2 arguments. First being a date in the YYYY/MM/DD format,
+    second item is an number and an optional third argument being --step
 
 (2) The number of arguments should be check and give a usage instruction if it is less
     than 2 or more than 3. Arguments are also checked to see if they're entered in the 
     correct format: YYYY/MM/DD for the first, an interger for the second
 
-(3) Take the first argument and seperate them by the / to get the year, month and date
+(3) Take the first argument and seperate them by the "/" to get the year, month and date
 
-(4) There are two scripts that will give the day before or after of the date given.
-    Leap year will be taken into consideration to give the correct date.
+(4) After function will take the day and increase it by 1, if the day is the last day of the
+    month then set the day to 1 and increase the month by 1. If the increased month 
+    exceed 12 then set it to 1 and increase the year by 1. 
+    Leap years are taken into consideration
+
+(5) Before function will take the day and decrease it by 1, if the day is 1 then set 
+    the day to the last day of previous month and decrease the month by 1. If the decreased 
+    month reach 0 then set it to 12 and decrease the year by 1. 
+    Leap years are taken into consideration
     
-(5) Depend on whether or not the number argument is positive or negative, the program will call
-    the before or after script the correct number of time.
+(6) Depend on whether or not the number argument is positive or negative, the program will call
+    the before or after script the correct number of time and print the final date.
+
+(7) if there is an optional argument of "--step", remove "--step" from the list and print 
+    the correspondent before or after function each time until it reach the number entered

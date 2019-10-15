@@ -11,11 +11,7 @@ Test run command 2 : python3 a1_ntdo3.py 2018/01/01 -1
 Test run command 3 : python3 a1_ntdo3.py 2018/01/01 2
 --test passed--
 Test run command 4 : python3 a1_ntdo3.py --step 2018/01/01 3
---test failed--
----- expect: 2018/01/02
-2018/01/03
-2018/01/04
-----  given: Error: wrong date entered
+--test passed--
 Test run command 5 : python3 a1_ntdo3.py 2018/07/01 500
 --test passed--
 Test run command 6 : python3 a1_ntdo3.py 2018/99/01 2
@@ -28,6 +24,7 @@ Test run command 9 : python3 a1_ntdo3.py 2020/02/28 1
 --test passed--
 Test run command 10 : python3 a1_ntdo3.py 2020/03/01 -1
 --test passed--
-Test Results: {1: 1, 2: 1, 3: 1, 4: 0, 5: 1, 6: 1, 7: 1, 8: 1, 9: 1, 10: 1}
-Total test run marks:  43.2
-Total marks for script (max. 48): 43.2
+Test Results: {1: 1, 2: 1, 3: 1, 4: 1, 5: 1, 6: 1, 7: 1, 8: 1, 9: 1, 10: 1}
+Total test run marks:  48.0
+Total marks for script (max. 48): 48.0
+[ntdo3@c7-ntdo3 assignment1]$ 
